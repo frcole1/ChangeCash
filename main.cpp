@@ -28,11 +28,7 @@ int main() {
           cashreg.setOpState(state);
       } else {
         printf("OPCAO: Invalida!!!\n");
-        //printf("Press any key to continue...");
-        //fflush(stdin);
-        //getchar();
       }
-      //cashreg.setOpState(state);
       break;
 
     case CashRegister::SAIR:
@@ -46,8 +42,6 @@ int main() {
     case CashRegister::DEPOSITAR:
       //system("clear");
       printf("\n\nDEPOSITE A MOEDA\n\n");
-      // TODO :printf("0 : R$: 0.01 %d\n",
-      // cashreg.getCountCoin((CashRegister::eCoinDef)0));
       printf("0 : R$: 0.01 Moeda(s): %d\n", cashreg.getCountCoin((CashRegister::eCoinDef)0));
       printf("1 : R$: 0.05 Moeda(s): %d\n", cashreg.getCountCoin((CashRegister::eCoinDef)1));
       printf("2 : R$: 0.10 Moeda(s): %d\n", cashreg.getCountCoin((CashRegister::eCoinDef)2));
@@ -60,17 +54,6 @@ int main() {
           cashreg.setOpState(CashRegister::QUANTIDADE);
       } else
           printf("OPCAO: Invalida!!!\n");
-
-      //printf("Press any key to continue...");
-      //fflush(stdin);
-      //getchar();
-      /*
-      printf("OPCAO: %d\n", coinSelect);
-      printf("Press any key to continue...");
-      fflush(stdin);
-      getchar();
-      cashreg.setOpState(CashRegister::QUANTIDADE);
-      */
       break;
 
     case CashRegister::TROCAR: {
@@ -87,8 +70,7 @@ int main() {
       if (cashreg.getBalance() >= coinChange) {
 
         cashreg.changeCalc(coinChange, &count1, &count050, &count025, &count010,
-                           &count005, &count001);
-        //        std::cout << "Moedas de de 1,00: "<< count1 << std::endl;
+                           &count005, &count001);        
         printf("\n\nMOEDA(S) PARA TROCO:\n\n");
         printf("Moeda(s) de de 1,00: %d\n", count1);
         printf("Moeda(s) de de 0,50: %d\n", count050);
@@ -96,11 +78,10 @@ int main() {
         printf("Moeda(s) de de 0,10: %d\n", count010);
         printf("Moeda(s) de de 0,05: %d\n", count005);
         printf("Moeda(s) de de 0,01: %d\n\n", count001);
-        //printf("Press any key to continue...");
+
         cashreg.refreshBalance();
         cashreg.dataSave();
-        //fflush(stdin);
-        //getchar();
+
         cashreg.setOpState(CashRegister::INICIAR);
 
       } else
@@ -111,9 +92,6 @@ int main() {
       // system("clear");
       printf("\n\nQUANTIDADE DESTA MOEDA\n\n");
       scanf("%d", &coinCount);
-      //printf("Press any key to continue...");
-      //fflush(stdin);
-      //getchar();
       cashreg.setOpState(CashRegister::ATUALIZAR);
       break;
 
@@ -133,7 +111,7 @@ int main() {
       break;
 
     case CashRegister::SANGRAR:
-      system("clear");
+      //system("clear");
       printf("\n\nSANGRAR A MOEDA\n\n");
       printf("0 : R$: 0.01 Moeda(s): %d\n", cashreg.getCountCoin((CashRegister::eCoinDef)0));
       printf("1 : R$: 0.05 Moeda(s): %d\n", cashreg.getCountCoin((CashRegister::eCoinDef)1));

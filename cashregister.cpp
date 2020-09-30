@@ -237,7 +237,7 @@ void CashRegister::changeCalc(double change, int *coins1, int *coins050,
   if (coins001 != nullptr) {
     *coins001 = (int)(change / 0.01);
   }
-  change -= (double)(((int)(change / 0.01)) * 0.01);
+  change -= (((int)(change / 0.01)) * 0.01);
 }
 
 void CashRegister::loadCoin(char *ptr, char *coin) {
